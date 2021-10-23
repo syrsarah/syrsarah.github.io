@@ -74,7 +74,7 @@ tweenBottom.start();
     
 function clickSubmit(){
     var secretCode = document.getElementById("secret_code").value;
-    if(secretCode == '123'){
+    if(secretCode == 'Syrah16721'){
         window.location.replace("https://syrsarah.github.io/task.html");
     }else{
        
