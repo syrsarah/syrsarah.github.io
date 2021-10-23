@@ -8,7 +8,7 @@ const showMainAnimation = (parent) => {
   box.classList.add("box", "flex");
   parent.appendChild(boxContainer);
   boxContainer.appendChild(box);
-  const quote = ["Simple", "is", "the", "new", "way"];
+  const quote = ["You", "are", "always", "the", "best"];
   let delay = 0;
   // Add all the words
   for (let word in quote){
