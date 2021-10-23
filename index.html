@@ -45,7 +45,6 @@
 .container {
   place-items: center;  
   text-align: center;
-  height: 100vh
 }
 
 .title {
@@ -64,11 +63,7 @@
   --fontColor: #112d4e;
 }
 
-#main {
-  min-height: 100vh;
-  background-color: var(--bgColor);
-  border: 12px solid var(--contrast);
-}
+
 
 .flex {
   display: flex;
@@ -228,10 +223,194 @@
   }
 }
 
+
+/* Resetting Default */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --primary-color: #f3f1f5;
+  --background-flex-right-color: #f3f1f5;
+  --background-flex-left-color: #4ecca3;
+  --top-curve-color: #4ecca3;
+  --bottom-curve-color: #4ecca3;
+  --background-color: #232931;
+  --primary-button-color: #393e46;
+  --input-bar-color: #393e46;
+  --input-bar-background-color: #f3f1f5;
+  font-family: "Work Sans", Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-family: "Work Sans", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+p {
+  font-family: "Work Sans", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+}
+
+label {
+  font-family: "Work Sans", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+
+
+.flex-container {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-item-left {
+  display: flex;
+  flex-direction: column;
+  padding: 2vh 2vw;
+  height: 16rem;
+  width: 16rem;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: var(--background-flex-left-color, #4ecca3);
+}
+
+.flex-item-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--background-flex-right-color, #f3f1f5);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 2vh 2vw;
+  height: 16rem;
+  width: 16rem;
+}
+
+.primary-button {
+  background-color: transparent;
+  border: 2px dashed var(--primary-button-color, #393e46);
+  margin: 2vh 2vw;
+  padding: 6px 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  border: 2px double var(--primary-button-color, #393e46);
+}
+
+.top-curve-layout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.top-curve-layout svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 46px;
+}
+
+.top-curve-layout .shape-fill {
+  fill: var(--top-curve-color, #4ecca3);
+}
+
+.bottom-curve-layout {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.bottom-curve-layout svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 46px;
+}
+
+.bottom-curve-layout .shape-fill {
+  fill: var(--bottom-curve-color, #4ecca3);
+}
+
+.curve-wrapper {
+  position: relative;
+}
+
+.input-bar {
+  padding: 8px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: var(--input-bar-background-color, #f3f1f5);
+  border: 2px double var(--input-bar-color, #393e46);
+  font-family: "Work Sans";
+}
+
+.ui-version-text {
+  display: block;
+  text-align: right;
+}
+
+@media (max-width: 767px) {
+  .top-curve-layout svg {
+    width: calc(100% + 1.3px);
+    height: 37px;
+  }
+  .bottom-curve-layout svg {
+    width: calc(100% + 1.3px);
+    height: 37px;
+  }
+}
+
+@media only screen and (max-width: 518px) {
+  .flex-container {
+    flex-direction: column;
+  }
+  .flex-item-right {
+    padding: 20px;
+    height: 12rem;
+    width: 15rem;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .flex-item-left {
+    padding: 20px 20px;
+    height: 12rem;
+    width: 15rem;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+}
+
+@media only screen and (max-height: 412px) {
+  .top-curve-layout .shape-fill {
+    fill: whitesmoke;
+  }
+}
+
 </style>
 </head>
 <body>
 
+  
 <div class="container">
   <h4 class="title">
     <span class="title-word title-word-1">Sarah</span>
@@ -239,21 +418,31 @@
     <span class="title-word title-word-3">Sarah</span>
     <span class="title-word title-word-4">Syr</span>
   </h4>
-  
-  <p class="line type" style=" color: red">Sarah, welcome home and stay blessed</p>
-  <div class="flex" id="main"></div>
-
-  
+  <br>
+   <p class="line type" style=" color: red">Sarah, welcome home!</p>
 </div>
-
-
+ <div class="flex" id="main">
+  </div>
+  <br>
+<section class="form-section flex-container">
+  <div class="main-form flex-item-left">
+    <label for="password" id="password-label">Authentication</label>
+    <input class="input-bar" type="password" id="secret_code" placeholder="secret_code" required>
+    <input class="primary-button" type="button" value="Submit" onclick="clickSubmit()">
+  </div>
+  <div class="sideNote flex-item-right">
+    <h1>Hello, Sarah!</h1>
+    <p>Enter your Secret Code and Authenticate!</p>
+    <p class="ui-version-text">@SyrSarah</p>
+  </div>
+</section>
 </body>
 <script>
 
 const loadingAnimationTime = 2000
 
 const showMainAnimation = (parent) => {
-  const boxContainer = document.createElement("div");
+  const boxContainer =document.createElement("div");
   boxContainer.style.overflow = "hidden";
   const box = document.createElement("div");
   box.classList.add("box", "flex");
@@ -299,6 +488,37 @@ const init = () => {
 };
 
 init();
+/* 
+@author SomnathDas
+More updates planned
+*/
 
+const tweenTop = KUTE.fromTo(
+  "#curve-top-2",
+  { path: "#curve-top-1" },
+  { path: "#curve-top-2" },
+  { repeat: 999, duration: 2600, yoyo: true }
+);
+
+tweenTop.start();
+const tweenBottom = KUTE.fromTo(
+  "#curve-bottom-2",
+  { path: "#curve-bottom-1" },
+  { path: "#curve-bottom-2" },
+  { repeat: 999, duration: 2600, yoyo: true }
+);
+
+tweenBottom.start();
+
+    
+    
+function clickSubmit(){
+    var secretCode = document.getElementById("secret_code").value;
+    if(secretCode == '123'){
+        window.location.replace("https://syrsarah.github.io/task.html");
+    }else{
+       
+    }
+}
 </script>
 </html>
